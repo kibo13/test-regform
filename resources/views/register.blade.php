@@ -4,27 +4,27 @@
 <div class="container">
   <h1 class="register-title">Регистрация</h1>
 
-  <form class="register-form"
+  <form
+    class="register-form"
     action="{{ route('create') }}"
     method="POST"
     enctype="multipart/form-data">
     @csrf
 
-    <div class="register-form__list row">
+    <div class="row">
+
       <!-- company -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="company">Название организации:</label>
-        <input type="text"
-          class="form-control @error('company') is-invalid @enderror @if(old('company')) is-valid @endif"
-          id="company"
+        <label class="register-form__label" for="company">Название организации:</label>
+        <input
+          type="text"
+          class="form-control @error('company') is-invalid @enderror @if(old('company')) is-valid @endif" id="company"
           name="company"
           placeholder="КГУ СШ №24 акимата города Нур-Султан"
           value="{{ old('company') }}">
 
         @error('company')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -32,18 +32,16 @@
 
       <!-- address -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="address">Юридический адрес:</label>
-        <input type="text"
-          class="form-control @error('address') is-invalid @enderror @if(old('address')) is-valid @endif"
-          id="address"
+        <label class="register-form__label" for="address">Юридический адрес:</label>
+        <input
+          type="text"
+          class="form-control @error('address') is-invalid @enderror @if(old('address')) is-valid @endif" id="address"
           name="address"
           placeholder="КГУ СШ №24 акимата города Нур-Султан"
           value="{{ old('address') }}">
 
         @error('address')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -51,17 +49,16 @@
 
       <!-- postcode -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="postcode">Почтовый индекс:</label>
-        <input type="text"
+        <label class="register-form__label" for="postcode">Почтовый индекс:</label>
+        <input
+          type="text"
           class="form-control @error('postcode') is-invalid @enderror @if(old('postcode')) is-valid @endif"
           id="postcode"
           name="postcode"
           value="{{ old('postcode') }}">
 
         @error('postcode')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -69,9 +66,9 @@
 
       <!-- phone -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="phone">Номер телефона организации:</label>
-        <input type="text"
+        <label class="register-form__label" for="phone">Номер телефона организации:</label>
+        <input
+          type="text"
           class="form-control @error('phone') is-invalid @enderror @if(old('phone')) is-valid @endif"
           id="phone"
           name="phone"
@@ -79,8 +76,7 @@
           value="{{ old('phone') }}">
 
         @error('phone')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -88,9 +84,9 @@
 
       <!-- email -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="email">Эл. Почта (организации):</label>
-        <input type="text"
+        <label class="register-form__label" for="email">Эл. Почта (организации):</label>
+        <input
+          type="text"
           class="form-control @error('email') is-invalid @enderror @if(old('email')) is-valid @endif"
           id="email"
           name="email"
@@ -98,8 +94,7 @@
           value="{{ old('email') }}">
 
         @error('email')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -107,9 +102,9 @@
 
       <!-- bin -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="bin">БИН:</label>
-        <input type="text"
+        <label class="register-form__label" for="bin">БИН:</label>
+        <input
+          type="text"
           class="form-control @error('bin') is-invalid @enderror @if(old('bin')) is-valid @endif"
           id="bin"
           name="bin"
@@ -118,8 +113,7 @@
           value="{{ old('bin') }}">
 
         @error('bin')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -127,9 +121,9 @@
 
       <!-- iik -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="iik">ИИК:</label>
-        <input type="text"
+        <label class="register-form__label" for="iik">ИИК:</label>
+        <input
+          type="text"
           class="form-control @error('iik') is-invalid @enderror @if(old('iik')) is-valid @endif"
           id="iik"
           name="iik"
@@ -138,8 +132,7 @@
           value="{{ old('iik') }}">
 
         @error('iik')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -147,9 +140,9 @@
 
       <!-- bank -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="bank">Название банка:</label>
-        <input type="text"
+        <label class="register-form__label" for="bank">Название банка:</label>
+        <input
+          type="text"
           class="form-control @error('bank') is-invalid @enderror @if(old('bank')) is-valid @endif"
           id="bank"
           name="bank"
@@ -157,8 +150,7 @@
           value="{{ old('bank') }}">
 
         @error('bank')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -166,9 +158,9 @@
 
       <!-- bik -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="bik">БИК:</label>
-        <input type="text"
+        <label class="register-form__label" for="bik">БИК:</label>
+        <input
+          type="text"
           class="form-control @error('bik') is-invalid @enderror @if(old('bik')) is-valid @endif"
           id="bik"
           name="bik"
@@ -177,40 +169,35 @@
           value="{{ old('bik') }}">
 
         @error('bik')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
       </div>
 
       <!-- fio -->
-      <div 
-class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="fio">Фамилия Имя Отчество (руководителя):</label>
-        <input type="text"
+      <div class="col-md-4 mb-3">
+        <label class="register-form__label" for="fio">Фамилия Имя Отчество (руководителя):</label>
+        <input
+          type="text"
           class="form-control @error('fio') is-invalid @enderror @if(old('fio')) is-valid @endif"
           id="fio"
           name="fio"
           placeholder="Иванов Иван Иванович"
           value="{{ old('fio') }}">
 
-
         @error('fio')
-        <sp an
-          class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
-        </sp>
+        </span>
         @enderror
       </div>
 
       <!-- response_fio -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="response_fio">Ответственное лицо:</label>
-        <input type="text"
+        <label class="register-form__label" for="response_fio">Ответственное лицо:</label>
+        <input
+          type="text"
           class="form-control @error('response_fio') is-invalid @enderror @if(old('response_fio')) is-valid @endif"
           id="response_fio"
           name="response_fio"
@@ -218,8 +205,7 @@ class="col-md-4 mb-3">
           value="{{ old('response_fio') }}">
 
         @error('response_fio')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -227,9 +213,9 @@ class="col-md-4 mb-3">
 
       <!-- response_phone -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="response_phone">Телефон ответственного лица:</label>
-        <input type="text"
+        <label class="register-form__label" for="response_phone">Телефон ответственного лица:</label>
+        <input
+          type="text"
           class="form-control @error('response_phone') is-invalid @enderror @if(old('response_phone')) is-valid @endif"
           id="response_phone"
           name="response_phone"
@@ -237,8 +223,7 @@ class="col-md-4 mb-3">
           value="{{ old('response_phone') }}">
 
         @error('response_phone')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -246,9 +231,9 @@ class="col-md-4 mb-3">
 
       <!-- response_email -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="response_email">E-mail ответственного лица:</label>
-        <input type="text"
+        <label class="register-form__label" for="response_email">E-mail ответственного лица:</label>
+        <input
+          type="text"
           class="form-control @error('response_email') is-invalid @enderror @if(old('response_email')) is-valid @endif"
           id="response_email"
           name="response_email"
@@ -256,8 +241,7 @@ class="col-md-4 mb-3">
           value="{{ old('response_email') }}">
 
         @error('response_email')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -265,9 +249,9 @@ class="col-md-4 mb-3">
 
       <!-- domain -->
       <div class="col-md-4 mb-3">
-        <label class="register-form__label"
-          for="domain">Название доменного имени в зоне edu.kz:</label>
-        <input type="text"
+        <label class="register-form__label" for="domain">Название доменного имени в зоне edu.kz:</label>
+        <input
+          type="text"
           class="form-control @error('domain') is-invalid @enderror @if(old('domain')) is-valid @endif"
           id="domain"
           name="domain"
@@ -275,8 +259,7 @@ class="col-md-4 mb-3">
           value="{{ old('domain') }}">
 
         @error('domain')
-        <span class="invalid-feedback bk-alert-danger"
-          role="alert">
+        <span class="invalid-feedback bk-alert-danger" role="alert">
           <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -284,10 +267,38 @@ class="col-md-4 mb-3">
 
     </div>
 
-    <div class="d-flex justify-content-between">
-      <button class="btn btn-warning">Регистрация</button>
-    </div>
+    <div class="row">
+      <!-- document -->
+      <div class="col-md-4 mb-3">
+        Загрузка файла
+      </div>
 
+      <!-- captcha -->
+      <div class="col-md-4 mb-3">
+        <label class="register-form__label" for="captcha">
+          Введите код с картинки:
+        </label>
+        <img src="" alt="captcha" >
+        <input
+          type="text"
+          class="form-control @error('captcha') is-invalid @enderror"
+          id="captcha"
+          name="captcha"
+          placeholder=""
+          value="{{ old('captcha') }}">
+
+        @error('captcha')
+        <span class="invalid-feedback bk-alert-danger" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+      </div>
+
+      <!-- button -->
+      <div class="col-md-4 mb-3 register-form__group" >
+        <button class="btn btn-warning register-form__submit">Регистрация</button>
+      </div>
+    </div>
   </form>
 </div>
 @endsection

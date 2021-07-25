@@ -38,6 +38,7 @@ class PersonRequest extends FormRequest
       'response_phone' => ['required', 'numeric'],
       'response_email' => ['required', 'email'],
       'domain' => ['required', 'string'],
+      'captcha' => ['required', 'captcha'],
       // 'document' => ['required']
     ];
   }
@@ -60,6 +61,7 @@ class PersonRequest extends FormRequest
       'response_email' => '"E-mail ответственного лица"',
       'domain' => '"Желаемое название доменного имени в зоне edu.kz"',
       'document' => '"Документ удостоверяющий организацию"',
+      'captcha' => 'код с картинки'
     ];
   }
 
@@ -70,7 +72,8 @@ class PersonRequest extends FormRequest
       'numeric' => 'Значение :attribute должно быть числом',
       'email' => 'Значение :attribute не является правильным email адресом',
       'min' => 'Значение :attribute должно содержать минимум :min символов',
-      'alpha' => 'Значение поля неверно. Поле может содержать только символы латиницы, кирилицы, казахские символы'
+      'alpha' => 'Значение поля неверно. Поле может содержать только символы латиницы, кирилицы, казахские символы',
+      'captcha' => 'Неправильный проверочный код'
     ];
   }
 }

@@ -10018,3 +10018,12 @@ h3 {
   font-size: 12px;
   font-weight: bold;
 }
+.register-form__group {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.register-form__submit {
+  width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
