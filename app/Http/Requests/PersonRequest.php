@@ -39,7 +39,7 @@ class PersonRequest extends FormRequest
       'response_email' => ['required', 'email'],
       'domain' => ['required', 'string'],
       'captcha' => ['required', 'captcha'],
-      // 'document' => ['required']
+      'document' => ['required', 'max:2048'],
     ];
   }
 
@@ -60,7 +60,6 @@ class PersonRequest extends FormRequest
       'response_phone' => '"Телефон ответственного лица"',
       'response_email' => '"E-mail ответственного лица"',
       'domain' => '"Желаемое название доменного имени в зоне edu.kz"',
-      'document' => '"Документ удостоверяющий организацию"',
       'captcha' => 'код с картинки'
     ];
   }
@@ -68,6 +67,9 @@ class PersonRequest extends FormRequest
   public function messages()
   {
     return [
+      'document.required' => 'Необходимо выбрать файл',
+      'document.max' => 'Размер не должен превышать 2MB',
+      'document.mimetypes' => 'Файлы должны быть в формате pdf',
       'required' => 'Необходимо заполнить :attribute',
       'numeric' => 'Значение :attribute должно быть числом',
       'email' => 'Значение :attribute не является правильным email адресом',

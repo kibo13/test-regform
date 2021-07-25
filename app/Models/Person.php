@@ -24,6 +24,6 @@ class Person extends Model
     'response_phone',
     'response_email',
     'domain',
-    // 'document',
+    'document',
   ];
 }

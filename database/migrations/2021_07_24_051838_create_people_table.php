@@ -29,8 +29,7 @@ class CreatePeopleTable extends Migration
       $table->string('response_phone');
       $table->string('response_email');
       $table->string('domain');
-      // $table->text('document');
-      // $table->text('captcha');
+      $table->text('document');
       $table->timestamps();
     });
   }

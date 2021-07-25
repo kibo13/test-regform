@@ -16,16 +16,25 @@ class PersonController extends Controller
 
   public function create(PersonRequest $request)
   {
-    $person = Person::create($request->all());
+    $params = $request->all();
 
-    // Mail::to('karina@corp.mail.kz')->send(
-    //   new RegistrationAlert($person)
-    // );
+    if ($request->has('document')) {
+      $files = $request->file('document');
 
-    Mail::to('b-kim@internet.ru')->send(
+      foreach ($files as $file) {
+        $name = $file->getClientOriginalName();
+        $file->move(public_path() . '/files/', $name);
+        $data[] = $name;
+      }
+
+      $params['document'] = json_encode($data);
+    }
+
+    $person = Person::create($params);
+
+    Mail::to('karina@corp.mail.kz')->send(
       new RegistrationAlert($person)
     );
-
 
     return redirect()->route('index');
   }

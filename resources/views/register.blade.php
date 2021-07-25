@@ -267,10 +267,36 @@
 
     </div>
 
-    <div class="row">
+    <div class="row align-items-end">
       <!-- document -->
       <div class="col-md-4 mb-3">
-        Загрузка файла
+        <label class="register-form__label" for="file">
+          Загрузите копию свидетельства о государственной регистрации организации или другой документ удостоверяющий организацию в формате pdf (Размер не должен превышать 2МБ):
+        </label>
+
+        <div class="register-form__upload">
+          <input
+            type="text"
+            class="register-form__tip"
+            id="note"
+            placeholder="Загрузите документы"
+            value="">
+
+          <input
+            type="file"
+            class="register-form__file @error('document') is-invalid @enderror"
+            id="document"
+            name="document[]"
+            accept="application/pdf"
+            multiple />
+
+          @error('document')
+          <span class="register-form__error invalid-feedback bk-alert-danger" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
+
       </div>
 
       <!-- captcha -->
@@ -298,7 +324,7 @@
       </div>
 
       <!-- button -->
-      <div class="col-md-4 mb-3 register-form__group" >
+      <div class="col-md-4 mb-3">
         <button class="btn btn-warning register-form__submit">Регистрация</button>
       </div>
     </div>
