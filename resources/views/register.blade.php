@@ -278,13 +278,16 @@
         <label class="register-form__label" for="captcha">
           Введите код с картинки:
         </label>
-        <img src="" alt="captcha" >
+
+        <div class="mb-2" id="captcha-img">
+          {!! captcha_img() !!}
+        </div>
+
         <input
           type="text"
           class="form-control @error('captcha') is-invalid @enderror"
           id="captcha"
           name="captcha"
-          placeholder=""
           value="{{ old('captcha') }}">
 
         @error('captcha')
